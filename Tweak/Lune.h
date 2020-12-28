@@ -15,6 +15,7 @@ BOOL isRoundLockScreenInstalled;
 UIImageView* luneView;
 UIView* luneDarkeningView;
 UIImage* currentArtwork;
+NSData* lastArtworkData;
 UIColor* backgroundArtworkColor;
 
 // icon

@@ -64,6 +64,7 @@ BOOL enabled;
 
 	if (!darkenBackgroundSwitch) return;
 	luneDarkeningView = [[UIView alloc] initWithFrame:[[self view] bounds]];
+	[luneDarkeningView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 	[luneDarkeningView setBackgroundColor:[UIColor blackColor]];
 	[luneDarkeningView setAlpha:0.0];
 	[luneDarkeningView setClipsToBounds:YES];
@@ -142,12 +143,16 @@ BOOL enabled;
             currentArtwork = [UIImage imageWithData:[dict objectForKey:(__bridge NSString*)kMRMediaRemoteNowPlayingInfoArtworkData]]; // set artwork
 
             if (dict) {
-                // get artwork based color
-                backgroundArtworkColor = [libKitten backgroundColor:currentArtwork];
+				if (![lastArtworkData isEqual:[dict objectForKey:(__bridge NSString*)kMRMediaRemoteNowPlayingInfoArtworkData]]) {
+					// get artwork based color
+					backgroundArtworkColor = [libKitten backgroundColor:currentArtwork];
 
-                // set artwork based color
-                [luneView setTintColor:backgroundArtworkColor];
-				[[luneView layer] setShadowColor:[backgroundArtworkColor CGColor]];
+					// set artwork based color
+					[luneView setTintColor:backgroundArtworkColor];
+					[[luneView layer] setShadowColor:[backgroundArtworkColor CGColor]];
+				}
+
+				lastArtworkData = [dict objectForKey:(__bridge NSString*)kMRMediaRemoteNowPlayingInfoArtworkData];
             }
         } else { // reset color if not playing
             if (!useCustomColorSwitch) {
