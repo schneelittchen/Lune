@@ -1,11 +1,11 @@
 Package: love.litten.lune
 Name: Lune 🌙
 Depends: mobilesubstrate, preferenceloader, firmware (>= 13), ws.hbang.common (>= 1.14), love.litten.libkitten (>= 1.1.1), com.spark.libsparkcolourpicker
-Version: 1.1.6
+Version: 1.1.7
 Architecture: iphoneos-arm
 Description: Twinkle twinkle little star
-Maintainer: alexandra <hiya@litten.love>
-Author: alexandra <hiya@litten.love>
+Maintainer: Litten
+Author: Litten
 Section: Tweaks
 Depiction: https://repo.litten.love/depictions/lne/index.html
 SileoDepiction: https://repo.litten.love/depictions/lne/lne.json
