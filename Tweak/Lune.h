@@ -36,6 +36,7 @@ BOOL useArtworkBasedColorSwitch = YES;
 
 // background
 BOOL darkenBackgroundSwitch = YES;
+BOOL alwaysDarkenBackgroundSwitch = NO;
 NSString* darkeningAmountValue = @"0.5";
 
 // miscellaneous

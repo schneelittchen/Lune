@@ -43,12 +43,12 @@ BOOL enabled;
 	if ([notification.name isEqual:@"toggleLuneVisibleNotification"]) {
 		[UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			[luneView setAlpha:1.0];
-			[luneDarkeningView setAlpha:[darkeningAmountValue doubleValue]];
+			if (!alwaysDarkenBackgroundSwitch) [luneDarkeningView setAlpha:[darkeningAmountValue doubleValue]];
 		} completion:nil];
 	} else if ([notification.name isEqual:@"toggleLuneInvisibleNotification"]) {
 		[UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
 			[luneView setAlpha:0.0];
-			[luneDarkeningView setAlpha:0.0];
+			if (!alwaysDarkenBackgroundSwitch) [luneDarkeningView setAlpha:0.0];
 		} completion:nil];
 	}
 
@@ -66,7 +66,8 @@ BOOL enabled;
 	luneDarkeningView = [[UIView alloc] initWithFrame:[[self view] bounds]];
 	[luneDarkeningView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 	[luneDarkeningView setBackgroundColor:[UIColor blackColor]];
-	[luneDarkeningView setAlpha:0.0];
+	if (!alwaysDarkenBackgroundSwitch) [luneDarkeningView setAlpha:0.0];
+	else [luneDarkeningView setAlpha:[darkeningAmountValue doubleValue]];
 	[luneDarkeningView setClipsToBounds:YES];
 	if (![luneDarkeningView isDescendantOfView:[self view]]) [[self view] insertSubview:luneDarkeningView atIndex:0];
 
@@ -198,6 +199,7 @@ BOOL enabled;
 
 	// background
 	[preferences registerBool:&darkenBackgroundSwitch default:YES forKey:@"darkenBackground"];
+	[preferences registerBool:&alwaysDarkenBackgroundSwitch default:NO forKey:@"alwaysDarkenBackground"];
 	[preferences registerObject:&darkeningAmountValue default:@"0.5" forKey:@"darkeningAmount"];
 
 	// miscellaneous
