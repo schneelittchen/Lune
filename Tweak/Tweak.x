@@ -92,21 +92,21 @@ BOOL enabled;
 
 - (BOOL)isActive { // get do not disturb state
 
-	if (%orig) {
+	isDNDActive = %orig;
+
+	if (isDNDActive) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			isDNDActive = YES;
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneVisibleNotification" object:nil];
 			[preferences setBool:isDNDActive forKey:@"isDNDActive"];
 		});
-	} else if (!%orig) {
+	} else if (!isDNDActive) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			isDNDActive = NO;
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneInvisibleNotification" object:nil];
 			[preferences setBool:isDNDActive forKey:@"isDNDActive"];
 		});
 	}
 
-	return %orig;
+	return isDNDActive;
 
 }
 
