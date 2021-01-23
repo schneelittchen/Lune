@@ -58,7 +58,7 @@ BOOL enabled;
 
 %hook CSCoverSheetViewController
 
-- (void)viewDidLoad { // add darkening view
+- (void)viewDidLoad { // add dim view
 
 	%orig;
 
@@ -70,6 +70,14 @@ BOOL enabled;
 	else [luneDarkeningView setAlpha:[darkeningAmountValue doubleValue]];
 	[luneDarkeningView setClipsToBounds:YES];
 	if (![luneDarkeningView isDescendantOfView:[self view]]) [[self view] insertSubview:luneDarkeningView atIndex:0];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+
+	%orig;
+
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"luneRefreshState" object:nil];
 
 }
 
@@ -90,6 +98,15 @@ BOOL enabled;
 
 %hook DNDState
 
+- (id)initWithCoder:(id)arg1 {
+
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(isActive) name:@"luneRefreshState" object:nil];
+
+	return %orig;
+
+}
+
 - (BOOL)isActive { // get do not disturb state
 
 	isDNDActive = %orig;
@@ -97,12 +114,10 @@ BOOL enabled;
 	if (isDNDActive) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneVisibleNotification" object:nil];
-			[preferences setBool:isDNDActive forKey:@"isDNDActive"];
 		});
 	} else if (!isDNDActive) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneInvisibleNotification" object:nil];
-			[preferences setBool:isDNDActive forKey:@"isDNDActive"];
 		});
 	}
 
@@ -118,10 +133,7 @@ BOOL enabled;
 
 	%orig;
 
-	if ([[preferences objectForKey:@"isDNDActive"] isEqual:@(YES)])
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneVisibleNotification" object:nil];
-	else if ([[preferences objectForKey:@"isDNDActive"] isEqual:@(NO)])
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"toggleLuneVisibleNotification" object:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"luneRefreshState" object:nil];
 
 }
 

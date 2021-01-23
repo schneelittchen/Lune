@@ -121,11 +121,13 @@
 			<array>
 				<integer>0</integer>
 				<integer>1</integer>
+				<integer>2</integer>
 			</array>
 			<key>validTitles</key>
 			<array>
 				<string>Do Not Disturb</string>
 				<string>Bedtime</string>
+				<string>Twinkling</string>
 			</array>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
