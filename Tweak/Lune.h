@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 #import <MediaRemote/MediaRemote.h>
 #import <Kitten/libKitten.h>
 #import "SparkColourPickerUtils.h"

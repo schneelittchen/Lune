@@ -1,8 +1,3 @@
-ARCHS = arm64 arm64e
-TARGET = iphone:clang::11.2
-
-include $(THEOS)/makefiles/common.mk
-
 BUNDLE_NAME = LunePrefs
 $(BUNDLE_NAME)_FILES = $(wildcard *.m)
 $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles
@@ -11,6 +6,7 @@ $(BUNDLE_NAME)_PRIVATE_FRAMEWORKS = Preferences
 $(BUNDLE_NAME)_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
 $(BUNDLE_NAME)_LIBRARIES = sparkcolourpicker
 
+include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/bundle.mk
 
 internal-stage::
