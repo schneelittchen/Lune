@@ -6,7 +6,7 @@ Twinkle twinkle little star
 2. Install Lune
 
 ## Compiling
-  - Depends on libkitten & sparkcolourpicker
+  - Depends on libKitten & sparkcolourpicker
   - You may want to edit the `Makefiles` to suit your theos installation
 
 ## Contributions
