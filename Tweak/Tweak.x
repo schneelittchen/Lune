@@ -189,7 +189,6 @@ BOOL enabled;
 
 	preferences = [[HBPreferences alloc] initWithIdentifier:@"love.litten.lunepreferences"];
 	preferencesDictionary = [NSDictionary dictionaryWithContentsOfFile: @"/var/mobile/Library/Preferences/love.litten.lune.colorspreferences.plist"];
-	isRoundLockScreenInstalled = [[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/RoundLockScreen.dylib"];
 	
 	[preferences registerBool:&enabled default:nil forKey:@"Enabled"];
 
@@ -201,9 +200,11 @@ BOOL enabled;
 
 	// glow
 	[preferences registerBool:&glowSwitch default:YES forKey:@"glow"];
-	[preferences registerBool:&useCustomGlowColorSwitch default:NO forKey:@"useCustomGlowColor"];
-	[preferences registerObject:&glowRadiusValue default:@"10.0" forKey:@"glowRadius"];
-	[preferences registerObject:&glowAlphaValue default:@"1.0" forKey:@"glowAlpha"];
+	if (glowSwitch) {
+		[preferences registerBool:&useCustomGlowColorSwitch default:NO forKey:@"useCustomGlowColor"];
+		[preferences registerObject:&glowRadiusValue default:@"10.0" forKey:@"glowRadius"];
+		[preferences registerObject:&glowAlphaValue default:@"1.0" forKey:@"glowAlpha"];
+	}
 
 	// colors
 	[preferences registerBool:&useCustomColorSwitch default:NO forKey:@"useCustomColor"];
@@ -211,8 +212,10 @@ BOOL enabled;
 
 	// background
 	[preferences registerBool:&darkenBackgroundSwitch default:YES forKey:@"darkenBackground"];
-	[preferences registerBool:&alwaysDarkenBackgroundSwitch default:NO forKey:@"alwaysDarkenBackground"];
-	[preferences registerObject:&darkeningAmountValue default:@"0.5" forKey:@"darkeningAmount"];
+	if (darkenBackgroundSwitch) {
+		[preferences registerBool:&alwaysDarkenBackgroundSwitch default:NO forKey:@"alwaysDarkenBackground"];
+		[preferences registerObject:&darkeningAmountValue default:@"0.5" forKey:@"darkeningAmount"];
+	}
 
 	// miscellaneous
 	[preferences registerBool:&hideDNDBannerSwitch default:NO forKey:@"hideDNDBanner"];
