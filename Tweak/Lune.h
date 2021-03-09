@@ -3,18 +3,15 @@
 #import "SparkColourPickerUtils.h"
 #import <Cephei/HBPreferences.h>
 
-HBPreferences* preferences;
-NSDictionary* preferencesDictionary;
+HBPreferences* preferences = nil;
+NSDictionary* preferencesDictionary = nil;
 
-extern BOOL enabled;
+BOOL enabled = NO;
 
 BOOL isDNDActive = NO;
-BOOL isRoundLockScreenInstalled;
-UIImageView* luneView;
-UIView* luneDarkeningView;
-UIImage* currentArtwork;
-NSData* lastArtworkData;
-UIColor* backgroundArtworkColor;
+UIImage* currentArtwork = nil;
+NSData* lastArtworkData = nil;
+UIColor* backgroundArtworkColor = nil;
 
 // icon
 NSString* xPositionValue = @"150.0";
@@ -41,7 +38,14 @@ NSString* darkeningAmountValue = @"0.5";
 BOOL hideDNDBannerSwitch = NO;
 
 @interface SBFLockScreenDateView : UIView
+@property(nonatomic, retain)UIImageView* luneView;
 @end
 
-@interface CSCoverSheetViewController : UIViewController
+@interface CSCoverSheetView : UIView
+@property(nonatomic, retain)UIView* luneDimView;
+@end
+
+@interface SBMediaController : NSObject
++ (id)sharedInstance;
+- (void)setNowPlayingInfo:(id)arg1;
 @end

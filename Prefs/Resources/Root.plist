@@ -30,7 +30,7 @@
 			<key>cell</key>
 			<string>PSStaticTextCell</string>
 			<key>label</key>
-			<string>X Position</string>
+			<string>X position</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -56,7 +56,7 @@
 			<key>cell</key>
 			<string>PSStaticTextCell</string>
 			<key>label</key>
-			<string>Y Position</string>
+			<string>Y position</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -125,7 +125,7 @@
 			</array>
 			<key>validTitles</key>
 			<array>
-				<string>Do Not Disturb</string>
+				<string>Do not disturb</string>
 				<string>Bedtime</string>
 				<string>Twinkling</string>
 			</array>
@@ -149,7 +149,7 @@
 			<key>key</key>
 			<string>useCustomColor</string>
 			<key>label</key>
-			<string>Use Custom Color</string>
+			<string>Use custom color</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -168,7 +168,7 @@
 				<false/>
 			</dict>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color</string>
 			<key>key</key>
 			<string>customColor</string>
 			<key>PostNotification</key>
@@ -184,7 +184,7 @@
 			<key>key</key>
 			<string>useArtworkBasedColor</string>
 			<key>label</key>
-			<string>Use Artwork Based Color</string>
+			<string>Use artwork based color</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -219,7 +219,7 @@
 			<key>key</key>
 			<string>useCustomGlowColor</string>
 			<key>label</key>
-			<string>Use Custom Glow Color</string>
+			<string>Use custom glow color</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -238,7 +238,7 @@
 				<false/>
 			</dict>
 			<key>label</key>
-			<string>Custom Color</string>
+			<string>Custom color</string>
 			<key>key</key>
 			<string>customGlowColor</string>
 			<key>PostNotification</key>
@@ -248,7 +248,7 @@
 			<key>cell</key>
 			<string>PSStaticTextCell</string>
 			<key>label</key>
-			<string>Glow Radius</string>
+			<string>Glow radius</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -274,7 +274,7 @@
 			<key>cell</key>
 			<string>PSStaticTextCell</string>
 			<key>label</key>
-			<string>Glow Alpha</string>
+			<string>Glow alpha</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -313,7 +313,7 @@
 			<key>key</key>
 			<string>darkenBackground</string>
 			<key>label</key>
-			<string>Dim Background</string>
+			<string>Dim background</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -327,7 +327,7 @@
 			<key>key</key>
 			<string>alwaysDarkenBackground</string>
 			<key>label</key>
-			<string>Always Dim Background</string>
+			<string>Always dim background</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -335,7 +335,7 @@
 			<key>cell</key>
 			<string>PSStaticTextCell</string>
 			<key>label</key>
-			<string>Dim Amount</string>
+			<string>Dim amount</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -374,7 +374,7 @@
 			<key>key</key>
 			<string>hideDNDBanner</string>
 			<key>label</key>
-			<string>Hide DND Banner</string>
+			<string>Hide DND banner</string>
 			<key>PostNotification</key>
 			<string>love.litten.lunepreferences/ReloadPrefs</string>
 		</dict>
@@ -383,7 +383,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Other Options</string>
+			<string>Other options</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -397,7 +397,7 @@
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Reset Preferences</string>
+			<string>Reset preferences</string>
 			<key>action</key>
 			<string>resetPrompt</string>
 		</dict>
@@ -423,7 +423,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>You Might Like:</string>
+			<string>You might like:</string>
 		</dict>
 		<dict>
 			<key>cellClass</key>
@@ -454,7 +454,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Lune By Litten, Icon And Banner By taki</string>
+			<string>Lune by Litten, icon and banner by taki</string>
 			<key>isStaticText</key>
 			<true/>
 		</dict>
@@ -472,7 +472,7 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>Source Code</string>
+			<string>Source code</string>
 			<key>subtitle</key>
 			<string>GitHub 🌙</string>
 			<key>url</key>
@@ -482,7 +482,7 @@
 			<key>cellClass</key>
 			<string>HBLinkTableCell</string>
 			<key>label</key>
-			<string>Donate To Litten</string>
+			<string>Donate to Litten</string>
 			<key>subtitle</key>
 			<string>Appreciated 💝</string>
 			<key>url</key>
